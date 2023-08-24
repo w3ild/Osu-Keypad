@@ -18,16 +18,16 @@ void setup() {
 
 void loop() {
   if (!digitalRead(xPin)){
-    Keyboard.press('x');
+    Keyboard.press('up_arrow');
     xHitMicros = micros();
   } else if (micros()-xHitMicros >= debounceMicros) {
-    Keyboard.release('x');
+    Keyboard.release('up_arrow');
   }
     
   if (!digitalRead(zPin)){
-    Keyboard.press('z');
+    Keyboard.press('down_arrow');
     zHitMicros = micros();
   } else if (micros()-zHitMicros >= debounceMicros) {
-    Keyboard.release('z');
+    Keyboard.release('down_arrow');
   }
 }
